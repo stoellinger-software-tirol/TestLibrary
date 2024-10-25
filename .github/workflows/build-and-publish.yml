@@ -24,6 +24,12 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Display .NET SDK version
+        run: dotnet --version
+
+      - name: Clear NuGet Cache
+        run: dotnet nuget locals all --clear
+
       - name: Restore dependencies
         run: dotnet restore ${{ env.SOLUTION_PATH }}
 
