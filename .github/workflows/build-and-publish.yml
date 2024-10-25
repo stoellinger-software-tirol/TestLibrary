@@ -22,13 +22,13 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore TestLibrary/TestLibrary.sln
 
       - name: Build project
         run: dotnet build TestLibrary/TestLibrary.sln --configuration Release
 
       - name: Pack NuGet package
-        run: dotnet pack --configuration Release --output ./output
+        run: dotnet pack TestLibrary/TestLibrary.sln --configuration Release --output ./output
 
       - name: Publish NuGet package
         run: dotnet nuget push ./output/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
