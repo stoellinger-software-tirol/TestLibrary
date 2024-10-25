@@ -32,6 +32,9 @@ jobs:
 
       - name: Pack NuGet package
         run: dotnet pack ${{ env.SOLUTION_PATH }} --configuration Release --output ./output
+        
+      - name: List output directory
+        run: dir ./output
 
       - name: Publish NuGet package
         run: dotnet nuget push ./output/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
