@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLibrary", "TestLibrary\TestLibrary.csproj", "{A1530E85-B29F-4B15-A187-A7B63BF983F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marco.TestLibrary", "Marco.TestLibrary\Marco.TestLibrary.csproj", "{A1530E85-B29F-4B15-A187-A7B63BF983F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

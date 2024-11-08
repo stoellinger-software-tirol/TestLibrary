@@ -13,7 +13,7 @@ jobs:
     runs-on: windows-latest
     
     env:
-        SOLUTION_PATH: TestLibrary/TestLibrary.sln
+        SOLUTION_PATH: Marco.TestLibrary/Marco.TestLibrary.sln
 
     steps:
       - name: Checkout code
@@ -28,5 +28,5 @@ jobs:
         run: dotnet pack ${{ env.SOLUTION_PATH }} --configuration Release --output ./output
         
       - name: Publish NuGet package
-        run: dotnet nuget push ./output/TestLibrary.1.0.0.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push ./output/Marco.TestLibrary.1.0.0.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
       
