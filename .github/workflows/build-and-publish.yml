@@ -51,4 +51,4 @@ jobs:
       
       - name: Publish NuGet package with NuGet CLI
         run: |
-          nuget.exe push ./output/TestLibrary.1.0.0.nupkg -ApiKey ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
+          nuget.exe push ./output/TestLibrary.1.0.0.nupkg -ApiKey "${{ secrets.NUGET_API_KEY }}" -Source https://api.nuget.org/v3/index.json
