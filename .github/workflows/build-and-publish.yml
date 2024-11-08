@@ -27,10 +27,6 @@ jobs:
       - name: Pack NuGet package
         run: dotnet pack ${{ env.SOLUTION_PATH }} --configuration Release --output ./output
         
-      - name: Install NuGet CLI
-        run: |
-          curl -o nuget.exe https://dist.nuget.org/win-x86-commandline/v6.0.0/nuget.exe
-
-      - name: Publish NuGet package with NuGet CLI
-        run: |
-          nuget.exe push ./output/TestLibrary.1.0.0.nupkg -ApiKey "${{ secrets.NUGET_API_KEY }}" -Source https://api.nuget.org/v3/index.json
+      - name: Publish NuGet package
+        run: dotnet nuget push ./output/TestLibrary.1.0.0.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
+      
